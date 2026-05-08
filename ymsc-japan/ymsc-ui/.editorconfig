@@ -1,0 +1,22 @@
+# EditorConfigプラグインに対し、これがルートファイルであることを通知し、上位階層での検索を停止
+root = true
+
+# すべてのファイルに一致
+[*]
+# 文字コードを設定
+charset = utf-8
+# インデントスタイル（選択可：space/tab）
+indent_style = space
+# インデントのスペース数
+indent_size = 2
+# 行末の改行コード（選択可：lf/cr/crlf）
+end_of_line = lf
+# ファイル末尾に改行を挿入
+insert_final_newline = true
+# 行頭・行末の空白を削除
+trim_trailing_whitespace = true
+
+# 拡張子がmdのファイルに一致
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false

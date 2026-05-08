@@ -1,0 +1,377 @@
+/**
+ * 汎用CSSスタイルレイアウト処理
+ * Copyright (c) 2019 ymsc
+ */
+
+ /** 基礎汎用スタイル **/
+/* 上側パディング5px */
+.pt5 {
+	padding-top: 5px;
+}
+/* 右側パディング5px */
+.pr5 {
+	padding-right: 5px;
+}
+/* 下側パディング5px */
+.pb5 {
+	padding-bottom: 5px;
+}
+/* 上側マージン5px */
+.mt5 {
+	margin-top: 5px;
+}
+/* 右側マージン5px */
+.mr5 {
+	margin-right: 5px;
+}
+/* 下側マージン5px */
+.mb5 {
+	margin-bottom: 5px;
+}
+/* 下側マージン8px */
+.mb8 {
+	margin-bottom: 8px;
+}
+/* 左側マージン5px */
+.ml5 {
+	margin-left: 5px;
+}
+/* 上側マージン10px */
+.mt10 {
+	margin-top: 10px;
+}
+/* 右側マージン10px */
+.mr10 {
+	margin-right: 10px;
+}
+/* 下側マージン10px */
+.mb10 {
+	margin-bottom: 10px;
+}
+/* 左側マージン10px */
+.ml10 {
+	margin-left: 10px;
+}
+/* 上側マージン20px */
+.mt20 {
+	margin-top: 20px;
+}
+/* 右側マージン20px */
+.mr20 {
+	margin-right: 20px;
+}
+/* 下側マージン20px */
+.mb20 {
+	margin-bottom: 20px;
+}
+/* 左側マージン20px */
+.ml20 {
+	margin-left: 20px;
+}
+
+/* 見出しスタイル */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+/* メッセージボックス：ステータスアイコン付きテキストを折り返し */
+.el-message-box__status + .el-message-box__message{
+    word-break: break-word;
+}
+
+/* ダイアログ：フルスクリーン以外の場合、上から6vhの位置に固定 */
+.el-dialog:not(.is-fullscreen) {
+	margin-top: 6vh !important;
+}
+
+/* ダイアログ：スクロールバー付きの場合、ボディ部を縦スクロール可に */
+.el-dialog__wrapper.scrollbar .el-dialog .el-dialog__body {
+    overflow: auto;
+	overflow-x: hidden;
+	max-height: 70vh;
+	padding: 10px 20px 0;
+}
+.el-form-item__label {
+  color: rgba(56, 56, 56, 0.98);
+}
+/* テーブルスタイル */
+.el-table {
+	/* テーブルヘッダースタイル */
+	.el-table__header-wrapper, .el-table__fixed-header-wrapper {
+		th {
+			word-break: break-word;
+			background-color: #f8f8f9;
+			color: rgba(56, 56, 56, 0.98);
+			height: 40px;
+			font-size: 13px;
+		}
+	}
+	/* テーブルボディ部：ボタンのアイコンとテキストの間隔調整 */
+	.el-table__body-wrapper {
+		.el-button [class*="el-icon-"] + span {
+			margin-left: 1px;
+		}
+    td {
+      color: rgba(56, 56, 56, 0.98);
+    }
+	}
+}
+
+/** フォームレイアウト **/
+/* フォームヘッダースタイル */
+.form-header {
+    font-size:15px;
+	color:#6379bb;
+	border-bottom:1px solid #ddd;
+	margin:8px 10px 25px 10px;
+	padding-bottom:5px
+}
+
+/** テーブルレイアウト **/
+/* ページネーションコンテナスタイル */
+.pagination-container {
+	position: relative;
+	height: 25px;
+	margin-bottom: 10px;
+	margin-top: 15px;
+	padding: 10px 20px !important;
+}
+
+/* ツリーコンポーネント：ボーダースタイル */
+.tree-border {
+    margin-top: 5px;
+    border: 1px solid #e5e6e7;
+    background: #FFFFFF none;
+    border-radius:4px;
+}
+
+/* ページネーション：右寄せ配置 */
+.pagination-container .el-pagination {
+	right: 0;
+	position: absolute;
+}
+
+/* レスポンシブ：画面幅768px以下の場合、ページネーションの一部要素非表示 */
+@media ( max-width : 768px) {
+  .pagination-container .el-pagination > .el-pagination__jump {
+    display: none !important;
+  }
+  .pagination-container .el-pagination > .el-pagination__sizes {
+    display: none !important;
+  }
+}
+
+/* テーブル：固定幅列のミニボタンスタイル */
+.el-table .fixed-width .el-button--mini {
+	padding-left: 0;
+	padding-right: 0;
+	width: inherit;
+}
+
+/** テーブル：更多操作ドロップダウンスタイル */
+.el-table .el-dropdown-link,.el-table .el-dropdown-selfdefine {
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.el-table .el-dropdown, .el-icon-arrow-down {
+	font-size: 12px;
+}
+
+/* ツリーコンポーネント：チェックボックスとテキストの間隔 */
+.el-tree-node__content > .el-checkbox {
+	margin-right: 8px;
+}
+
+/* リストグループ：ストライプスタイルのリストアイテム */
+.list-group-striped > .list-group-item {
+	border-left: 0;
+	border-right: 0;
+	border-radius: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* リストグループ：基本スタイル */
+.list-group {
+	padding-left: 0px;
+	list-style: none;
+}
+
+/* リストグループ：アイテムスタイル */
+.list-group-item {
+	border-bottom: 1px solid #e7eaec;
+	border-top: 1px solid #e7eaec;
+	margin-bottom: -1px;
+	padding: 11px 0px;
+	font-size: 13px;
+}
+
+/* 右寄せ配置 */
+.pull-right {
+	float: right !important;
+}
+
+/* カードコンポーネント：ヘッダースタイル */
+.el-card__header {
+	padding: 14px 15px 7px;
+	min-height: 40px;
+}
+
+/* カードコンポーネント：ボディ部スタイル */
+.el-card__body {
+	padding: 15px 20px 20px 20px;
+}
+
+/* カードボックス：パディングスタイル */
+.card-box {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-bottom: 10px;
+}
+
+/* ボタン色：シアン色ボタンスタイル */
+.el-button--cyan.is-active,
+.el-button--cyan:active {
+  background: #20B2AA;
+  border-color: #20B2AA;
+  color: #FFFFFF;
+}
+
+.el-button--cyan:focus,
+.el-button--cyan:hover {
+  background: #48D1CC;
+  border-color: #48D1CC;
+  color: #FFFFFF;
+}
+
+.el-button--cyan {
+  background-color: #20B2AA;
+  border-color: #20B2AA;
+  color: #FFFFFF;
+}
+
+/* テキスト色スタイル */
+/* ネイビー色テキスト */
+.text-navy {
+	color: #1ab394;
+}
+/* 基本色テキスト */
+.text-primary {
+	color: inherit;
+}
+/* 成功色テキスト */
+.text-success {
+	color: #1c84c6;
+}
+/* 情報色テキスト */
+.text-info {
+	color: #23c6c8;
+}
+/* 警告色テキスト */
+.text-warning {
+	color: #f8ac59;
+}
+/* 危険色テキスト */
+.text-danger {
+	color: #ed5565;
+}
+/* 薄色テキスト */
+.text-muted {
+	color: #888888;
+}
+
+/* 画像スタイル */
+/* 円形画像 */
+.img-circle {
+	border-radius: 50%;
+}
+/* 大サイズ画像 */
+.img-lg {
+	width: 120px;
+	height: 120px;
+}
+/* アバターアップロードプレビュースタイル */
+.avatar-upload-preview {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	box-shadow: 0 0 4px #ccc;
+	overflow: hidden;
+}
+
+/* ドラッグ列スタイル（ゴースト要素：ドラッグ中の仮要素） */
+.sortable-ghost{
+	opacity: .8;
+	color: #fff!important;
+	background: #42b983!important;
+}
+
+/* 右上ボタン：右寄せ配置 */
+.top-right-btn {
+	position: relative;
+	float: right;
+}
+
+ // フッター操作バー
+ .footer-back {
+   position: fixed;
+   bottom: 0px;
+   width: 100%;
+   height: 60px;
+   left: 110px;
+   text-align: center;
+   padding: 12px 0;
+   z-index: 99;
+   pointer-events: none;
+ }
+.footer-back .el-button {
+  pointer-events: auto;
+}
+
+// フッター操作バー（ダイアログ用）
+.dialog-footer{
+
+}
+ //
+ // 底部固定ダブルボタン（サイドバー有りの場合）
+ .bottom-button-c {
+   text-align: center;
+   position: fixed;
+   bottom: 10px;
+   left: 52%;
+   z-index: 9999;
+ }
+.el-form-item {
+  margin-bottom: 18px;
+}
+.el-tooltip__popper {
+  max-width: 400px;
+  white-space: normal !important;
+}
+ //// 底部固定ダブルボタン（サイドバー有無別バージョン）
+ //.bottom-button {
+ //  text-align: center;
+ //  position: fixed;
+ //  bottom: 10px;
+ //  left: 45%;
+ //}
+ //.bottom-button {
+ //  text-align: center;
+ //  position: fixed;
+ //  bottom: 0;
+ //  left: 0;
+ //  width: 100%;
+ //  height: 48px;
+ //  line-height: 28px;
+ //  background: #fff;
+ //  z-index: 1;
+ //  box-shadow: 0 -3px 5px #ddd;
+ //}
