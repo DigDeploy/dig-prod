@@ -1327,16 +1327,21 @@ export default {
     },
 
     roleDisabled(response) {
-      console.log(response);
       if (response.data.roleList.includes("admin")) {
         this.approvePresidentDisabled = false;
         this.approveDirectorDisabled = false;
         this.approveManagerDisabled = false;
       } else if (response.data.roleList.includes("shacho")) {
         this.approvePresidentDisabled = false;
+        this.approveDirectorDisabled = false;
+        this.approveManagerDisabled = false;
       } else if (response.data.roleList.includes("bucho")) {
         this.approveDirectorDisabled = false;
+        this.approveManagerDisabled = false;
       } else if (response.data.roleList.includes("kacho")) {
+        this.approveManagerDisabled = false;
+      } else if (response.data.roleList.includes("yakuin")) {
+        this.approveDirectorDisabled = false;
         this.approveManagerDisabled = false;
       }
     },
@@ -1589,7 +1594,7 @@ export default {
                 }
             };
         }
-        
+
         // 現在のタブを閉じて指定タブを開く
         this.$tab.closeOpenPage(obj);
     },

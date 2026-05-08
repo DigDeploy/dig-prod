@@ -1067,6 +1067,7 @@ export default {
       fromRouterQuery: "",
       form: {
         expenses: 0,
+        loginId: null,
         reportLoginId: null,
       },
       travelFeeForm: {},
@@ -1080,7 +1081,7 @@ export default {
         loginId: [
           {
             required: true,
-            message: "出張者氏名は必須です",
+            message: "出張者は必須です",
             trigger: "change",
           },
         ],
@@ -1189,7 +1190,7 @@ export default {
           { validator: timeRangeValidator, trigger: "blur" },
         ],
         reportLoginId: [
-          { required: true, message: "出張者は必須です", trigger: "change" },
+          { required: true, message: "出張者氏名は必須です", trigger: "change" },
         ],
         expenses: [
           { required: true, message: "旅費概算払は必須です", trigger: "blur" },
@@ -1371,6 +1372,8 @@ export default {
     await this.route();
     await this.selectBukaInfos();
     this.getInfoFlag = true;
+    this.form.loginId = Number(this.$store.getters.userId);
+    this.handleLoginIdChange();
     this.$modal.closeLoading();
   },
   methods: {

@@ -1451,17 +1451,27 @@ export default {
     roleDisabled(roleList) {
       if (roleList.includes("admin")) {
         this.approvePresidentDisabled = false;
+        this.approveAffairsDisabled = false;
         this.approveDirectorDisabled = false;
         this.approveManagerDisabled = false;
-        this.approveAffairsDisabled = false;
       } else if (roleList.includes("shacho")) {
         this.approvePresidentDisabled = false;
-      }else if (roleList.includes("bucho")) {
+        this.approveAffairsDisabled = false;
         this.approveDirectorDisabled = false;
-      } else if (roleList.includes("kacho")) {
         this.approveManagerDisabled = false;
       } else if (roleList.includes("somu")) {
         this.approveAffairsDisabled = false;
+        this.approveDirectorDisabled = false;
+        this.approveManagerDisabled = false;
+      }else if (roleList.includes("bucho")) {
+        this.approveDirectorDisabled = false;
+        this.approveManagerDisabled = false;
+      } else if (roleList.includes("kacho")) {
+        this.approveManagerDisabled = false;
+      } else if (roleList.includes("yakuin")) {
+        this.approveAffairsDisabled = false;
+        this.approveDirectorDisabled = false;
+        this.approveManagerDisabled = false;
       }
     },
     getDict() {

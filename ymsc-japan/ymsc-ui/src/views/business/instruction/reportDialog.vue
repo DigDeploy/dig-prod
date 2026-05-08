@@ -164,7 +164,6 @@ import { getByteLength } from "@/utils";
 
 export default {
   name: "InstructionReportAdd",
-  dicts: ["instruction_report_type", "instruction_report_status"],
   data() {
     const byteLengthValidator = (rule, value, callback) => {
       const maxLength = rule.maxLength;
